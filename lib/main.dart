@@ -35,11 +35,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _textToChange = 0;
+  // final List<String> textWords = ["ab", "cd", "de", "gh", "ij"];
+  String textHolder = "Old Sample Text";
 
-  void textControl() {
+  void _textControl() {
     setState(() {
-      _textToChange += 1;
+      textHolder = "New Sample text";
     });
   }
 
@@ -54,11 +55,11 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "$_textToChange",
+              textHolder,
               style: const TextStyle(fontSize: 20.0),
             ),
             ElevatedButton(
-              onPressed: textControl,
+              onPressed: _textControl,
               child: const Text("Change Text"),
             )
           ],
