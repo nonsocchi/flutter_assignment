@@ -4,6 +4,8 @@
 // 3) Split the app into three widgets: App, TextControl & Text
 
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/set_text.dart';
+import 'text_control.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,36 +37,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // final List<String> textWords = ["ab", "cd", "de", "gh", "ij"];
-  String textHolder = "Old Sample Text";
-
-  void _textControl() {
-    setState(() {
-      textHolder = "New Sample text";
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Flutter Assignment"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              textHolder,
-              style: const TextStyle(fontSize: 20.0),
-            ),
-            ElevatedButton(
-              onPressed: _textControl,
-              child: const Text("Change Text"),
-            )
-          ],
-        ),
-      ),
+      body: const TextControl(),
     );
   }
 }
